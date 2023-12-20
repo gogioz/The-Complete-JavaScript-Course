@@ -104,6 +104,7 @@ const formatCur = function (value, locale, currency) {
 
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = "";
+  console.log(acc.movements);
 
   let movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
 
@@ -351,7 +352,7 @@ btnClose.addEventListener("click", function (e) {
 let sorted = false;
 btnSort.addEventListener("click", function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
 
